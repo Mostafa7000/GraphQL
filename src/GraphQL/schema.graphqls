@@ -26,3 +26,16 @@ schema {
   query: Query
   mutation: Mutation
 }
+
+# Example of mutation:
+#
+# mutation {
+#   createBook(input: { title: "New Book", authorId: "123" }) {
+#     id
+#     title
+#     author {
+#       id
+#       name
+#     }
+#   }
+# }
