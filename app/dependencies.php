@@ -26,5 +26,22 @@ return function (ContainerBuilder $containerBuilder) {
 
             return $logger;
         },
+        \Doctrine\DBAL\Connection::class => function (SettingsInterface $c) {
+            $settings = $c->get('');
+
+            print_r($settings);
+            
+            $connectionParams = [
+                'dbname'   => $settings['db']['name'],
+                'user'     => $settings['db']['username'],
+                'password' => $settings['db']['password'],
+                'host'     => $settings['db']['host'],
+                'driver'   => $settings['db']['driver'],
+            ];
+        
+            $connection = \Doctrine\DBAL\DriverManager::getConnection($connectionParams);
+        
+            return $connection;
+        }
     ]);
 };
