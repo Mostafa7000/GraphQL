@@ -1,6 +1,12 @@
 <?php
 
 return [
+    'Book' => [
+        'author' => [
+            'id' => 1,
+            'name' => 'Ahmed Omar'
+        ],
+    ],
     'Query' => [
         'getBooks' => function ($root, $args, $context) {
             return [
@@ -14,17 +20,5 @@ return [
                 ]
             ];
         },
-        'getAuthors' => function ($root, $args, $context) {
-            return [
-                [
-                    'id' => 1,
-                    'name' => 'Ahmed Omar'
-                ],
-                [
-                    'id' => 2,
-                    'name' => 'Hassan Ghaly'
-                ]
-            ];
-        }
     ]
 ];

@@ -26,6 +26,7 @@
         "ext-json": "*",
         "doctrine/dbal": "^3.6",
         "monolog/monolog": "^2.8",
+        "overblog/dataloader-php": "^0.7.0",
         "php-di/php-di": "^6.4",
         "slim/psr7": "^1.5",
         "slim/slim": "^4.10",
