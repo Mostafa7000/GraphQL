@@ -1,15 +1,28 @@
-schema {
-  query: Query
+type Mutation {
+  createBook(input: BookInput!): Book
 }
+
+input BookInput {
+  title: String!
+  authorId: ID!
+}
+
 type Query {
   getBooks: [Book]
 }
+
 type Book {
   id: ID
   title: String!
   author: Author
 }
+
 type Author {
   id: ID!
   name: String
+}
+
+schema {
+  query: Query
+  mutation: Mutation
 }
